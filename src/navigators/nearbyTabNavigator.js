@@ -1,4 +1,3 @@
-
 import { createMaterialTopTabNavigator } from 'react-navigation';
 import RestaurantsList from "../screens/Nearby/RestaurantsList";
 import RestaurantsMap from "../screens/Nearby/RestaurantsMap";

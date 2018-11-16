@@ -11,8 +11,9 @@ class SignInScreen extends Component {
         };
     }
     static navigationOptions = {
-        itle: 'SIGN IN',
-      };
+        title: 'SIGN IN',
+        header: null
+    };
     clickHere = () => {
         // alert("modal")
         this.props.navigation.navigate('ForgotModal')
@@ -20,7 +21,7 @@ class SignInScreen extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                {/* <Header style={{ backgroundColor: "#fff" }}>
+                <Header style={{ backgroundColor: "#fff" }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ justifyContent: 'flex-start', alignContent: 'center' }}>
@@ -35,7 +36,7 @@ class SignInScreen extends Component {
                         <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
                         </View>
                     </View>
-                </Header> */}
+                </Header>
                 <KeyboardAvoidingView keyboardVerticalOffset={0} behavior="padding" enabled>
                     <View style={styles.container}>
                         <View style={styles.inputBox}>
@@ -52,7 +53,7 @@ class SignInScreen extends Component {
                                 onChangeText={(val) => this.passwordInputHandler(val)}
                                 value={this.state.password} />
                         </View>
-                        <TouchableOpacity onPress={() => this.props.navigation.replace('Entry')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Entry')}>
                             <View style={styles.loginButton}>
                                 <Text style={styles.buttonText}>LOG IN</Text>
                             </View>

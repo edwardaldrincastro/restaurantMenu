@@ -15,7 +15,8 @@ class RegisterScreen extends Component {
     }
     
     static navigationOptions = {
-        headerTitle: 'REGISTER NOW',
+        // headerTitle: 'REGISTER NOW',
+        header: null
       };
 
     usernameInputHandler = (input) => {
@@ -41,7 +42,7 @@ class RegisterScreen extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                {/* <Header style={{ backgroundColor: "#fff" }}>
+                <Header style={{ backgroundColor: "#fff" }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ width: '10%', backgroundColor: 'fff', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ justifyContent: 'flex-start', alignContent: 'center' }}>
@@ -56,7 +57,7 @@ class RegisterScreen extends Component {
                         <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
                         </View>
                     </View>
-                </Header> */}
+                </Header>
                 <KeyboardAvoidingView keyboardVerticalOffset={0} behavior="padding" enabled>
                     <View style={styles.container}>
                         <View style={styles.inputBox}>

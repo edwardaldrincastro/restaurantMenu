@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, ImageBackground } from 'react-native';
 import { Header } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -36,28 +36,72 @@ class RestaurantsList extends Component {
                     </View>
                 </Header> */}
                 <View style={styles.container}>
-                    <Text style={{ color: "#fff" }}>RestaurantsList</Text>
-
-                    <View style={{
-                        flex: 1,
-                    }}>
-                        <ScrollView>
-                            <View style={{
-                                width: '90%', height: 300, backgroundColor: 'red',
-
-                            }}>
-                                < Text > picture</Text>
+                    <ScrollView>
+                        <View style={styles.insideScrollContainer}>
+                            <View style={styles.restaurantHolder}>
+                                <View style={styles.imageHolder}>
+                                    <ImageBackground source={require('../../assets/burger.jpg')} style={{
+                                        width: '100%',
+                                        height: '100%'
+                                    }} />
+                                </View>
+                                <View style={{ flexDirection: 'row', flex: 1 }}>
+                                    <View style={styles.name}>
+                                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Marmalade Burger Cafe</Text>
+                                        <Text style={{ fontSize: 12 }}>Hamburgers</Text>
+                                    </View>
+                                    <View style={styles.readyButton}>
+                                        <View style={styles.ready}>
+                                            <Text style={{ color: '#00b0ff', fontSize: 10 }}>Ready in 25Min</Text>
+                                        </View>
+                                    </View>
+                                </View>
                             </View>
-                            <View style={{
-                                width: '90%', height: 300, backgroundColor: 'red',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                            }}>
-                                < Text > picture</Text>
+                        </View>
+                        <View style={styles.insideScrollContainer}>
+                            <View style={styles.restaurantHolder}>
+                                <View style={styles.imageHolder}>
+                                <ImageBackground source={require('../../assets/pizza.jpg')} style={{
+                                        width: '100%',
+                                        height: '100%'
+                                    }} />
+                                </View>
+                                <View style={{ flexDirection: 'row', flex: 1 }}>
+                                    <View style={styles.name}>
+                                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Le Pizza de Las Tomato</Text>
+                                        <Text style={{ fontSize: 12 }}>Pizza</Text>
+                                    </View>
+                                    <View style={styles.readyButton}>
+                                        <View style={styles.ready}>
+                                            <Text style={{ color: '#00b0ff', fontSize: 10 }}>Ready in 35Min</Text>
+                                        </View>
+                                    </View>
+                                </View>
                             </View>
-                        </ScrollView>
+                        </View>
+                        <View style={styles.insideScrollContainer}>
+                            <View style={styles.restaurantHolder}>
+                                <View style={styles.imageHolder}>
+                                <ImageBackground source={require('../../assets/omelette.jpg')} style={{
+                                        width: '100%',
+                                        height: '100%'
+                                    }} />
+                                </View>
+                                <View style={{ flexDirection: 'row', flex: 1 }}>
+                                    <View style={styles.name}>
+                                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Yukihira Diner</Text>
+                                        <Text style={{ fontSize: 12 }}>Snacks</Text>
+                                    </View>
+                                    <View style={styles.readyButton}>
+                                        <View style={styles.ready}>
+                                            <Text style={{ color: '#00b0ff', fontSize: 10 }}>Ready in 25Min</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                    </ScrollView>
 
-                    </View>
                 </View>
             </View >
         );
@@ -69,9 +113,45 @@ export default RestaurantsList;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#fff',
+    },
+    insideScrollContainer: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#000',
+    },
+    restaurantHolder: {
+        width: "90%",
+        height: 200,
+        backgroundColor: '#fff',
+        marginBottom: 10
+    },
+    imageHolder: {
+        width: "100%",
+        height: 160,
+        backgroundColor: '#f4511e',
+    },
+    name: {
+        width: "60%",
+        justifyContent: 'center',
+        marginLeft: 10,
+        flexDirection: 'column',
+        backgroundColor: "#fff"
+    },
+    ready: {
+        width: "100%",
+        height: 35,
+        borderWidth: 1,
+        borderColor: '#00b0ff',
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    readyButton: {
+        width: "35%",
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "#fff"
     },
     icon: {
         width: '10%',
