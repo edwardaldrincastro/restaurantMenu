@@ -10,7 +10,7 @@ class ForgotPasswordModal extends Component {
         };
     }
     modalCLose = () => {
-       alert("modal close")
+        alert("modal close")
     }
     modalHandler = () => {
         this.setState({
@@ -20,25 +20,13 @@ class ForgotPasswordModal extends Component {
 
     render() {
         return (
-            <View>
-                <Modal
-                    animationType="fade"
-                    transparent={true}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {
-                        alert('Modal has been closed.');
-                    }}>
-                    <View style={{ width: "100%", height: "100%", backgroundColor: "#eee" }}>
-                        <View style={styles.modalContainer}>
-                            <Text>inside modal</Text>
-                            <TouchableOpacity>
-                                <View>
-                                    <Icon name="md-close" size={25} color="#000" onPress={() => this.modalCLose()} />
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+            <View style={styles.modalContainer}>
+                <Text>inside modal</Text>
+                <TouchableOpacity>
+                    <View>
+                        <Icon name="md-close" size={25} color="#000" onPress={() => this.props.navigation.goBack()} />
                     </View>
-                </Modal>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -50,7 +38,8 @@ const styles = StyleSheet.create({
     modalContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: "center"
+        alignItems: "center",
+        backgroundColor: 'red'
     }
 
 })

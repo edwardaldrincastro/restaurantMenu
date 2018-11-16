@@ -7,7 +7,9 @@ class LandingScreen extends Component {
         this.state = {
         };
     }
-
+    static navigationOptions = {
+        header: null,
+      };
     render() {
         return (
             <View style={{ flex: 1 }}>

@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import SignInScreen from "../screens/SignInScreen";
-import ForgotPasswordModal from "../components/forgotPasswordModal";
-import { createStackNavigator } from "react-navigation";
-class ModalStack extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+// import React, { Component } from 'react';
+// import SignInScreen from "../screens/SignInScreen";
+// import ForgotPasswordModal from "../components/forgotPasswordModal";
+// import { createStackNavigator } from "react-navigation";
 
-  render() {
-    return (
-      <ModalStack/>
-    );
-  }
-}
+// class ModalStack extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//     };
+//   }
 
-const ModalStack = createStackNavigator({
-    SignIn: SignInScreen,
-    MyModal: ForgotPasswordModal,
-  },{
-  navigationOptions: {
-       header: null,
-       mode: 'modal',
-    }
-  })
+//   render() {
+//     return (
+//       <ModalStackNavigator/>
+//     );
+//   }
+// }
+
+// const ModalStackNavigator = createStackNavigator({
+//     SignIn: SignInScreen,
+//     ForgotModal: ForgotPasswordModal,
+//   },{
+//   navigationOptions: {
+//        header: null,
+//        mode: 'modal',
+//     }
+//   })
   
-export default ModalStack;
+// export default ModalStack;

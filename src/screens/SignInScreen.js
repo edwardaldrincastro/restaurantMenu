@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, View, Text, TextInput, StyleSheet, TouchableOpacity, KeyboardAvoidingView, ImageBackground } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, KeyboardAvoidingView, ImageBackground } from 'react-native';
 import { Header, } from "native-base";
 import Icon from "react-native-vector-icons/Ionicons";
 
@@ -10,15 +10,17 @@ class SignInScreen extends Component {
             modalVisible: false
         };
     }
-
+    static navigationOptions = {
+        itle: 'SIGN IN',
+      };
     clickHere = () => {
-        
-        this.props.navigation.navigate('MyModal')
+        // alert("modal")
+        this.props.navigation.navigate('ForgotModal')
     }
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header style={{ backgroundColor: "#fff" }}>
+                {/* <Header style={{ backgroundColor: "#fff" }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
                             <View style={{ justifyContent: 'flex-start', alignContent: 'center' }}>
@@ -33,7 +35,7 @@ class SignInScreen extends Component {
                         <View style={{ width: '10%', backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
                         </View>
                     </View>
-                </Header>
+                </Header> */}
                 <KeyboardAvoidingView keyboardVerticalOffset={0} behavior="padding" enabled>
                     <View style={styles.container}>
                         <View style={styles.inputBox}>
@@ -50,7 +52,7 @@ class SignInScreen extends Component {
                                 onChangeText={(val) => this.passwordInputHandler(val)}
                                 value={this.state.password} />
                         </View>
-                        <TouchableOpacity onPress={() => alert("REGISTERED")}>
+                        <TouchableOpacity onPress={() => this.props.navigation.replace('Entry')}>
                             <View style={styles.loginButton}>
                                 <Text style={styles.buttonText}>LOG IN</Text>
                             </View>
